@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR 101 - Monday Checking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="topbar">
+    <a href="#home" class="brand">AR 101</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <nav id="nav">
+      <div class="dropdown">
+        <a href="#um">The University of Manila</a>
+        <ul>
+          <li><a href="#um-history">History</a></li>
+          <li><a href="#um-mission">Mission</a></li>
+          <li><a href="#um-vision">Vision</a></li>
+          <li><a href="#um-motto">Motto</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#cs">Computer Science</a>
+        <ul>
+          <li><a href="#cs-history">History</a></li>
+          <li><a href="#cs-mission">Mission</a></li>
+          <li><a href="#cs-vision">Vision</a></li>
+          <li><a href="#cs-motto">Motto</a></li>
+        </ul>
+      </div>
+      <a href="#ai">AI Presentation</a>
+      <a href="#professors">CS Professors</a>
+      <a href="#events">CS Events</a>
+      <a href="#personal">Personal Info</a>
+      <a href="#resume">Resume</a>
+      <a href="#gallery">Family &amp; Friends</a>
+      <a href="#products">Products</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HOME ============ -->
+    <section id="home" class="hero">
+      <h1>AR 101 – Monday Checking</h1>
+      <p class="date">October 12, 2026</p>
+    </section>
+
+    <!-- ============ THE UNIVERSITY OF MANILA ============ -->
+    <section id="um" class="page">
+      <h2>The University of Manila</h2>
+
+      <article id="um-history" class="block">
+        <h3>History</h3>
+        <!-- INSERT UM HISTORY HERE -->
+      </article>
+
+      <article id="um-mission" class="block">
+        <h3>Mission</h3>
+        <!-- INSERT UM MISSION HERE -->
+      </article>
+
+      <article id="um-vision" class="block">
+        <h3>Vision</h3>
+        <!-- INSERT UM VISION HERE -->
+      </article>
+
+      <article id="um-motto" class="block">
+        <h3>Motto</h3>
+        <!-- INSERT UM MOTTO HERE -->
+      </article>
+    </section>
+
+    <!-- ============ COMPUTER SCIENCE ============ -->
+    <section id="cs" class="page alt">
+      <h2>Computer Science</h2>
+
+      <article id="cs-history" class="block">
+        <h3>History</h3>
+        <!-- INSERT CS HISTORY HERE -->
+      </article>
+
+      <article id="cs-mission" class="block">
+        <h3>Mission</h3>
+        <!-- INSERT CS MISSION HERE -->
+      </article>
+
+      <article id="cs-vision" class="block">
+        <h3>Vision</h3>
+        <!-- INSERT CS VISION HERE -->
+      </article>
+
+      <article id="cs-motto" class="block">
+        <h3>Motto</h3>
+        <!-- INSERT CS MOTTO HERE -->
+      </article>
+    </section>
+
+    <!-- ============ AI PRESENTATION (2 mins) ============ -->
+    <section id="ai" class="page">
+      <h2>AI Presentation <span class="tag">2 mins</span></h2>
+      <div class="video-box">
+        <!-- INSERT VIDEO HERE, e.g.
+        <video controls src="files/ai-presentation.mp4"></video> -->
+      </div>
+    </section>
+
+    <!-- ============ COMPUTER SCIENCE PROFESSORS ============ -->
+    <section id="professors" class="page alt">
+      <h2>Computer Science Professors</h2>
+      <div class="grid prof-grid">
+        <!-- INSERT PROFESSORS HERE (copy the card below for each one)
+        <figure class="card">
+          <img src="img/prof1.jpg" alt="Professor name">
+          <figcaption><strong>Name</strong><br>Position</figcaption>
+        </figure> -->
+      </div>
+    </section>
+
+    <!-- ============ COMPUTER SCIENCE EVENT (10 pictures with caption) ============ -->
+    <section id="events" class="page">
+      <h2>Computer Science Events</h2>
+      <div class="grid photo-grid">
+        <!-- 10 slots. Replace the src and caption of each one. -->
+        <figure class="card"><img src="img/event1.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 1</figcaption></figure>
+        <figure class="card"><img src="img/event2.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 2</figcaption></figure>
+        <figure class="card"><img src="img/event3.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 3</figcaption></figure>
+        <figure class="card"><img src="img/event4.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 4</figcaption></figure>
+        <figure class="card"><img src="img/event5.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 5</figcaption></figure>
+        <figure class="card"><img src="img/event6.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 6</figcaption></figure>
+        <figure class="card"><img src="img/event7.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 7</figcaption></figure>
+        <figure class="card"><img src="img/event8.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 8</figcaption></figure>
+        <figure class="card"><img src="img/event9.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 9</figcaption></figure>
+        <figure class="card"><img src="img/event10.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 10</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ============ PERSONAL INFORMATION ============ -->
+    <section id="personal" class="page alt">
+      <h2>Personal Information</h2>
+      <!-- INSERT PERSONAL INFORMATION HERE -->
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section id="resume" class="page">
+      <h2>Resume</h2>
+      <!-- INSERT RESUME HERE (e.g. <a class="btn" href="files/resume.pdf">Download resume</a>) -->
+    </section>
+
+    <!-- ============ PICTURES: FAMILY / FRIENDS / GROUP / GF-BF ============ -->
+    <section id="gallery" class="page alt">
+      <h2>Family, Friends &amp; Group</h2>
+      <div class="grid photo-grid">
+        <!-- INSERT PICTURES HERE (copy the card below for each one)
+        <figure class="card">
+          <img src="img/photo1.jpg" alt="">
+          <figcaption>Caption</figcaption>
+        </figure> -->
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section id="products" class="page">
+      <h2>Products</h2>
+      <div class="grid product-grid">
+        <!-- INSERT PRODUCTS HERE (copy the card below for each one)
+        <article class="product">
+          <img src="img/product1.jpg" alt="Product name">
+          <h3>Product name</h3>
+          <p>Description</p>
+          <p class="price">₱ 0.00</p>
+        </article> -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>AR 101 – Monday Checking · October 12, 2026</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
