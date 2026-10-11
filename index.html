@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AR 101 - Webpage to?</title>
+  <title>AR 101 - Webpage koto?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
@@ -96,7 +96,6 @@
     .grid { display: grid; gap: 24px; }
     .photo-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
     .prof-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-    .product-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
     .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
     .alt .card { background: var(--paper); }
@@ -104,11 +103,28 @@
     .card img.empty { visibility: hidden; }
     .card figcaption { padding: 12px 14px; font-size: .95rem; color: var(--muted); }
 
-    .product { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; background: var(--panel); }
-    .product img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 12px; }
-    .product h3 { font-size: 1.15rem; }
-    .product p { color: var(--muted); font-size: .95rem; }
-    .product .price { margin-top: 10px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--accent); }
+    /* ---------- Product cards ---------- */
+    .product-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 300px)); gap: 40px 36px; max-width: 1040px; margin: 0 auto; }
+    .product {
+      display: flex; flex-direction: column; background: #fff; color: var(--ink);
+      border-radius: var(--radius); padding: 20px 24px 22px;
+      box-shadow: 7px 7px 0 rgba(18, 40, 28, .35);
+    }
+    .product img { display: block; width: 100%; height: 190px; object-fit: contain; margin-bottom: 14px; }
+    .product h3 { text-align: center; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .product > p { color: var(--muted); font-size: .92rem; line-height: 1.55; flex: 1; }
+    .product-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 22px; padding-top: 18px; border-top: 2px solid var(--line);
+    }
+    .product .price { font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; font-size: 1.45rem; color: var(--ink); }
+    .cart-btn {
+      display: grid; place-items: center; width: 80px; height: 44px; cursor: pointer;
+      background: #fff; color: var(--ink); border: 2px solid var(--ink); border-radius: var(--radius);
+      transition: background .15s, color .15s;
+    }
+    .cart-btn svg { width: 26px; height: 26px; }
+    .cart-btn:hover, .cart-btn.added { background: var(--accent); border-color: var(--accent); color: #fff; }
 
     .video-box video, .video-box iframe { width: 100%; max-width: 900px; aspect-ratio: 16 / 9; border: 0; background: #000; border-radius: var(--radius); }
     .btn { display: inline-block; background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius); font-weight: 700; }
@@ -376,13 +392,88 @@
     <section id="products" class="page">
       <h2>Products</h2>
       <div class="grid product-grid">
-        <!-- INSERT PRODUCTS HERE (copy the card below for each one)
+        <!-- Pictures are watch-1.jpg to watch-9.jpg in the same folder as index.html. Edit the names, text and prices here. -->
         <article class="product">
-          <img src="product1.jpg" alt="Product name">
-          <h3>Product name</h3>
-          <p>Description</p>
-          <p class="price">₱ 0.00</p>
-        </article> -->
+          <img src="watch-1.jpg" alt="Apple Watch Series 9" loading="lazy">
+          <h3>Apple Watch Series 9</h3>
+          <p>Pre-owned, tested and working. Bright display with heart-rate, sleep and workout tracking.</p>
+          <div class="product-foot">
+            <span class="price">₱ 14,500.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Apple Watch Series 9 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-2.jpg" alt="Samsung Galaxy Watch 6" loading="lazy">
+          <h3>Samsung Galaxy Watch 6</h3>
+          <p>Second-hand and fully working. Tracks heart rate, sleep and workouts. Strap included.</p>
+          <div class="product-foot">
+            <span class="price">₱ 8,500.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Samsung Galaxy Watch 6 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-3.jpg" alt="Google Pixel Watch 2" loading="lazy">
+          <h3>Google Pixel Watch 2</h3>
+          <p>Pre-owned in good condition. Heart-rate tracking, step counting and phone notifications.</p>
+          <div class="product-foot">
+            <span class="price">₱ 9,500.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Google Pixel Watch 2 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-4.jpg" alt="Garmin Forerunner 265" loading="lazy">
+          <h3>Garmin Forerunner 265</h3>
+          <p>Second-hand running watch, tested and working. GPS tracking for runs and workouts.</p>
+          <div class="product-foot">
+            <span class="price">₱ 11,000.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Garmin Forerunner 265 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-5.jpg" alt="Fitbit Sense 2" loading="lazy">
+          <h3>Fitbit Sense 2</h3>
+          <p>Pre-owned and working well. Tracks stress, sleep and heart rate through the day.</p>
+          <div class="product-foot">
+            <span class="price">₱ 5,500.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Fitbit Sense 2 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-6.jpg" alt="Apple Watch Ultra 2" loading="lazy">
+          <h3>Apple Watch Ultra 2</h3>
+          <p>Second-hand with a large, tough titanium case. Tested and ready to wear.</p>
+          <div class="product-foot">
+            <span class="price">₱ 27,000.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Apple Watch Ultra 2 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-7.jpg" alt="Samsung Galaxy Watch 6 Classic" loading="lazy">
+          <h3>Samsung Galaxy Watch 6 Classic</h3>
+          <p>Pre-owned with a classic look, working properly. Charger included.</p>
+          <div class="product-foot">
+            <span class="price">₱ 11,000.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Samsung Galaxy Watch 6 Classic to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-8.jpg" alt="Garmin Venu 3" loading="lazy">
+          <h3>Garmin Venu 3</h3>
+          <p>Second-hand and tested. Bright AMOLED screen with fitness and sleep tracking.</p>
+          <div class="product-foot">
+            <span class="price">₱ 13,000.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Garmin Venu 3 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="watch-9.jpg" alt="Amazfit GTR 4" loading="lazy">
+          <h3>Amazfit GTR 4</h3>
+          <p>Pre-owned and in working condition. Long battery life with heart-rate and sleep tracking.</p>
+          <div class="product-foot">
+            <span class="price">₱ 5,000.00</span>
+            <button class="cart-btn" type="button" aria-label="Add Amazfit GTR 4 to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></button>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -408,6 +499,14 @@
         nav.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', false);
       }
+    });
+
+    // Cart button feedback
+    document.querySelectorAll('.cart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.add('added');
+        setTimeout(() => btn.classList.remove('added'), 900);
+      });
     });
   </script>
 </body>
