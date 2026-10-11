@@ -10,16 +10,15 @@
 
   <style>
     :root {
-      --ink: #1b2233;
-      --muted: #5b6475;
-      --paper: #f6f7f9;
-      --panel: #ffffff;
-      --line: #d9dde5;
-      --accent: #0e5a64;
+      --ink: #12281c;
+      --muted: #5a6b60;
+      --paper: #d8eadc;
+      --panel: #e8f3eb;
+      --line: #d5e0d8;
+      --accent: #1f6b3a;
       --gold: #c9962b;
       --radius: 6px;
-    }
-
+    } 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 70px; }
     body {
@@ -115,9 +114,39 @@
     .btn { display: inline-block; background: var(--accent); color: #fff; padding: 12px 24px; border-radius: var(--radius); font-weight: 700; }
     .btn:hover { background: var(--ink); }
 
-    footer { background: var(--ink); color: #c8ccd6; text-align: center; padding: 28px; font-size: .9rem; }
+    footer { background: var(--ink); color: #c8d4cc; text-align: center; padding: 28px; font-size: .9rem; }
 
     :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    /* ---------- Faculty board (CS Professors) ---------- */
+    .faculty-intro {
+      max-width: 52ch; margin: -12px auto 48px; text-align: center;
+      color: var(--muted); font-size: 1.05rem;
+    }
+    .faculty-board {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 40px 28px; max-width: 1180px; margin: 0 auto;
+    }
+    .prof {
+      width: 210px; flex: 0 0 auto;
+      background: var(--ink); padding: 8px 8px 0;
+      border-radius: 10px; border-bottom: 4px solid var(--gold);
+      box-shadow: 0 10px 22px rgba(18, 40, 28, .28);
+      transform: rotate(var(--tilt, 0deg));
+    }
+    .prof:nth-child(odd)  { --tilt: -1.6deg; }
+    .prof:nth-child(even) { --tilt: 1.4deg; }
+    .prof:nth-child(3)    { --tilt: -.6deg; }
+    .prof img {
+      display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+      border-radius: 4px; background: #0d6a8a;
+    }
+    .prof figcaption {
+      padding: 10px 6px 12px; text-align: center; line-height: 1.3;
+      font-family: "Bricolage Grotesque", Arial, sans-serif; color: #fff;
+    }
+    .prof figcaption strong { display: block; font-size: .98rem; font-weight: 700; }
+    .prof figcaption span { display: block; margin-top: 2px; font-size: .8rem; font-weight: 500; color: var(--gold); }
 
     /* ---------- Mobile ---------- */
     @media (max-width: 960px) {
@@ -133,7 +162,23 @@
       .page { padding: 56px 6vw; }
       .logo-badge, .logo-tile { width: 72px; height: 72px; }
     }
+    @media (max-width: 520px) {
+      .faculty-board { gap: 28px 16px; }
+      .prof { width: calc(50% - 8px); }
+      .prof figcaption strong { font-size: .88rem; }
+      .prof figcaption span { font-size: .72rem; }
+    }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    /* ---------- Centered layout ---------- */
+    .page > h2,
+    .section-head { text-align: center; justify-content: center; }
+    .block { margin-left: auto; margin-right: auto; text-align: center; }
+    .block ul { list-style-position: inside; margin-left: 0; padding: 0; }
+    .video-box { text-align: center; }
+    .video-box video,
+    .video-box iframe { display: block; margin: 0 auto; }
+    .grid { justify-content: center; }
   </style>
 </head>
 <body>
@@ -244,20 +289,44 @@
       </article>
     </section>
 
-    <!-- ============ AI PRESENTATION (2 mins) ============ -->
-    <div class="video-box">
-  <video controls src="ai-presentation.mp4"></video>
-</div>
+    <!-- ============ AI PRESENTATION ============ -->
+    <section id="ai" class="page">
+      <h2>MISTAKEN <span class="tag">2 mins</span></h2>
+      <div class="video-box">
+        <video controls src="ai-presentation.mp4"></video>
+      </div>
+    </section>
 
     <!-- ============ COMPUTER SCIENCE PROFESSORS ============ -->
     <section id="professors" class="page alt">
       <h2>Computer Science Professors</h2>
-      <div class="grid prof-grid">
-        <!-- INSERT PROFESSORS HERE (copy the card below for each one)
-        <figure class="card">
-          <img src="prof1.jpg" alt="Professor name">
-          <figcaption><strong>Name</strong><br>Position</figcaption>
-        </figure> -->
+      <p class="faculty-intro">The faculty of the College of Computer Science who teach and guide us.</p>
+
+      <div class="faculty-board">
+        <figure class="prof">
+          <img src="prof-berde.jpg" alt="Prof. Stanley Berde" loading="lazy">
+          <figcaption><strong>Prof. Stanley Berde</strong><span>Computer Science Faculty</span></figcaption>
+        </figure>
+
+        <figure class="prof">
+          <img src="prof-borces-joselito.jpg" alt="Prof. Joselito Borces" loading="lazy">
+          <figcaption><strong>Prof. Joselito Borces</strong><span>Computer Science Faculty</span></figcaption>
+        </figure>
+
+        <figure class="prof">
+          <img src="prof-borces-marjorie.jpg" alt="Prof. Marjorie Borces" loading="lazy">
+          <figcaption><strong>Prof. Marjorie Borces</strong><span>Computer Science Faculty</span></figcaption>
+        </figure>
+
+        <figure class="prof">
+          <img src="prof-fallorina.jpg" alt="Prof. Rochelle Anne Fallorina" loading="lazy">
+          <figcaption><strong>Prof. Rochelle Anne Fallorina</strong><span>Computer Science Faculty</span></figcaption>
+        </figure>
+
+        <figure class="prof">
+          <img src="prof-plaza.jpg" alt="Prof. Rogelio Plaza" loading="lazy">
+          <figcaption><strong>Prof. Rogelio Plaza</strong><span>Computer Science Faculty</span></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -265,11 +334,11 @@
     <section id="events" class="page">
       <h2>Computer Science Events</h2>
       <div class="grid photo-grid">
-        <!-- 10 slots. Replace the src and caption of each one. -->
-        <figure class="card"><img src="event1.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 1</figcaption></figure>
-        <figure class="card"><img src="event2.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 2</figcaption></figure>
-        <figure class="card"><img src="event3.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 3</figcaption></figure>
-        <figure class="card"><img src="event4.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 4</figcaption></figure>
+        <!-- Add event pictures as event1.jpg to event10.jpg in the same folder as index.html. Slots 5-10 are still placeholders. -->
+        <figure class="card"><img src="event1.jpg" alt="ML tournament" onerror="this.classList.add('empty')"><figcaption>ML tournament</figcaption></figure>
+        <figure class="card"><img src="event2.jpg" alt="Acquaintance party" onerror="this.classList.add('empty')"><figcaption>Acquaintance party</figcaption></figure>
+        <figure class="card"><img src="event3.jpg" alt="Dance competition" onerror="this.classList.add('empty')"><figcaption>Dance competition</figcaption></figure>
+        <figure class="card"><img src="event4.jpg" alt="International coastal clean up drive" onerror="this.classList.add('empty')"><figcaption>International coastal clean up drive</figcaption></figure>
         <figure class="card"><img src="event5.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 5</figcaption></figure>
         <figure class="card"><img src="event6.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 6</figcaption></figure>
         <figure class="card"><img src="event7.jpg" alt="" onerror="this.classList.add('empty')"><figcaption>Caption 7</figcaption></figure>
